@@ -72,18 +72,12 @@
 
 
               <div class="form-group row">
-                <label for="inputDiseasesDate" class="label col-sm-3 col-form-label">Case Date</label>
+                <label for="inputDiseasesDate" class="label col-sm-3 col-form-label">Case Date Range</label>
                 <div class="col-sm-9">
-                  <input class="col-sm-6" nbInput placeholder="Case Open" [nbDatepicker]="formcontrol" fullWidth
-                    formControlName="caseOpenDate"
-                    [status]="(secondForm.get('caseOpenDate').invalid&& (secondForm.get('caseOpenDate').dirty || secondForm.get('caseOpenDate').touched) )? 'danger' : 'basic' ">
-                  <nb-datepicker #formcontrol></nb-datepicker>
-
-                  <input class="col-sm-6" nbInput placeholder="Case Present" [nbDatepicker]="ngmodel" fullWidth
-                    formControlName="caseCloseDate"
-                    [status]="(secondForm.get('caseCloseDate').invalid&& (secondForm.get('caseCloseDate').dirty || secondForm.get('caseCloseDate').touched) )? 'danger' : 'basic' ">
-                  <nb-datepicker #ngmodel></nb-datepicker>
-
+                  <input nbInput placeholder="Select Case start and end date" [nbDatepicker]="formcontrol" fullWidth
+                    formControlName="caseDateRange"
+                    [status]="(secondForm.get('caseDateRange').invalid&& (secondForm.get('caseDateRange').dirty || secondForm.get('caseDateRange').touched) )? 'danger' : 'basic' ">
+                  <nb-rangepicker #formcontrol></nb-rangepicker>
                 </div>
               </div>
 

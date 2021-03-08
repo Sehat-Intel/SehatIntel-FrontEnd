@@ -28,8 +28,9 @@ export class AnalyticsComponent implements OnInit {
       diseasesName: ['', Validators.required],
       doctorsName: ['', Validators.required],
       hospitalsName: ['', Validators.required],
-      caseOpenDate: ['', Validators.required],
-      caseCloseDate: ['', Validators.required],
+      caseDateRange: ['', Validators.required],
+      caseStartDate : [''],
+      caseEndDate: ['']
     });
     this.thirdForm = this.fb.group({
       doctorsFeedback : ['', Validators.required],
@@ -47,15 +48,17 @@ export class AnalyticsComponent implements OnInit {
 
   onSecondFormSubmit() {
     console.log("Second Frorm Updated");
-    // console.log(this.secondForm.value);
+    this.secondForm.value.caseStartDate = this.secondForm.value.caseDateRange.start;
+    this.secondForm.value.caseEndDate = this.secondForm.value.caseDateRange.end;
+
+    console.log(this.secondForm.value);
+
+
   };
 
   onThirdFormSubmit(){
     console.log("Third Frorm Updated");
     // console.log(this.thirdForm.value);
-
-    // create an async process so that when the last uplod data is clicked, only than the cloudinary post service is triggered,
-    // and only after that all the values of the froms are submitted to the Uploaddata service
   };
 
   onSelectDropZone(event) {
@@ -114,18 +117,3 @@ export class AnalyticsComponent implements OnInit {
 
 
 }
-
-
-// this.userDataService.sendUserData(obj).subscribe(data => {
-//   console.log(data);
-// });
-
-// this.thirdForm.value.labReportFileId = response.public_id;
-// this.thirdForm.value.labReportFileUrl = response.secure_url;
-// obj = {
-//   ...this.firstForm.value,
-//   ...this.secondForm.value,
-//   ...this.thirdForm.value
-// };
-// // myCallback(obj);
-// return obj;

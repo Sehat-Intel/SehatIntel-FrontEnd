@@ -11,8 +11,8 @@ export interface UserData {
   prescription: String,
   labReportFileId: String,
   labReportFileUrl: String,
-  caseCloseDate: Date,
-  caseOpenDate: Date,
+  caseStartDate: Date,
+  caseEndDate: Date,
 }
 
 export abstract class UserDataService {

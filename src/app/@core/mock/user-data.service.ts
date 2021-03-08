@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 // import { catchError } from 'rxjs/operators';
 // import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
-import { UserData } from '../data/users';
+import { UserData } from '../data/user-data';
 
 
 @Injectable()
