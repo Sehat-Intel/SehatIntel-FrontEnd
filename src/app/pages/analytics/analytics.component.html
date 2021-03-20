@@ -121,7 +121,7 @@
 
                 <ngx-dropzone (change)="onSelectDropZone($event)">
                   <ngx-dropzone-label>Upload Image here</ngx-dropzone-label>
-                  <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onSelectDropZone(f)">
+                  <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemoveDropZone(f)">
                     <!-- <ngx-dropzone-label>({{ f.type }})</ngx-dropzone-label> -->
                   </ngx-dropzone-image-preview>
                 </ngx-dropzone>
