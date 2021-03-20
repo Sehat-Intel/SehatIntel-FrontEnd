@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AnalyticsComponent } from './analytics.component';
+import { AnalyticsRoutingModule } from "./analytics-routing.module";
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   NbAccordionModule,
@@ -20,12 +22,14 @@ import {
 } from '@nebular/theme';
 import { CommonModule } from '@angular/common';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { UserDataFormComponent } from './user-data-form/user-data-form.component';
 
 @NgModule({
-  declarations: [AnalyticsComponent],
+  declarations: [AnalyticsComponent, UserDataFormComponent],
   imports: [
     CommonModule,
     FormsModule,
+    AnalyticsRoutingModule,
     ReactiveFormsModule,
     NbTabsetModule,
     NbRouteTabsetModule,

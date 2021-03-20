@@ -1,4 +1,4 @@
-<!-- <nb-card class="col-md-12 col-lg-12 col-xxxl-12">
+<nb-card class="col-md-12 col-lg-12 col-xxxl-12">
   <nb-card-body>
     <nb-stepper orientation="horizontal">
        <nb-step [label]="labelOne">
@@ -96,6 +96,9 @@
           <nb-card-header>Diseases Details</nb-card-header>
           <nb-card-body>
             <form [formGroup]="thirdForm">
+
+
+              <!-- <button  (click)="functionTwo()">Test</button> -->
               <div class="form-group row">
                 <label for="inputDoctorsFeedback" class="label col-sm-3 col-form-label">Doctor's Feedback</label>
                 <div class="col-sm-9">
@@ -119,6 +122,7 @@
                 <ngx-dropzone (change)="onSelectDropZone($event)">
                   <ngx-dropzone-label>Upload Image here</ngx-dropzone-label>
                   <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemoveDropZone(f)">
+                    <!-- <ngx-dropzone-label>({{ f.type }})</ngx-dropzone-label> -->
                   </ngx-dropzone-image-preview>
                 </ngx-dropzone>
 
@@ -138,6 +142,18 @@
 
       <nb-step [hidden]="true" label="Fourth Step">
         <div class="step-container">
+
+
+          <!-- <nb-card [nbSpinner]="true" nbSpinnerStatus="basic">
+            <nb-card-body>
+              Please wait your data is uploading
+            </nb-card-body>
+          </nb-card> -->
+
+          <!-- <button [nbSpinner]="loading" nbSpinnerStatus="success" nbButton (click)="toggleLoadingAnimation()">
+            Download
+          </button> -->
+
           <div *ngIf="showThankYouMessage">
             <h3>Thank you</h3>
             <h4>Your report will be generated shortly</h4>
@@ -155,6 +171,4 @@
 
     </nb-stepper>
   </nb-card-body>
-</nb-card> -->
-
-<router-outlet></router-outlet>
+</nb-card>

@@ -22,7 +22,8 @@ const routes: Routes = [{
     },
     {
       path: 'analytics',
-      component: AnalyticsComponent
+      loadChildren: () => import('./analytics/analytics.module')
+      .then(m => m.AnalyticsModule),
     },
     // {
     //   path: 'layout',
