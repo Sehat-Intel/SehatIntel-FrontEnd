@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnalyticsComponent } from './analytics.component';
-import { UserDataFormComponent } from './user-data-form/user-data-form.component';
-
+import { TableauDashboardComponent } from './tableau-dashboard/tableau-dashboard.component';
 
 const routes: Routes = [
   {
@@ -10,8 +9,8 @@ const routes: Routes = [
     component: AnalyticsComponent,
     children: [
       {
-        path: 'form',
-        component: UserDataFormComponent,
+        path: 'dashboard',
+        component: TableauDashboardComponent,
       }
     ],
   },

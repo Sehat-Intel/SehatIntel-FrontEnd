@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { AnalyticsComponent } from './analytics.component';
-import { AnalyticsRoutingModule } from "./analytics-routing.module";
+import { CommonModule } from '@angular/common';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecordsRoutingModule } from './records-routing.module';
+import { AddRecordsComponent } from './add-records/add-records.component';
+import { ViewRecordsComponent } from './view-records/view-records.component';
 import {
   NbAccordionModule,
   NbButtonModule,
@@ -20,16 +21,16 @@ import {
   NbSpinnerModule,
   NbUserModule,
 } from '@nebular/theme';
-import { CommonModule } from '@angular/common';
-import { TableauDashboardComponent } from './tableau-dashboard/tableau-dashboard.component';
-import { TableauModule } from 'ngx-tableau';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { RecordsComponent } from './records.component';
 
 @NgModule({
-  declarations: [AnalyticsComponent, TableauDashboardComponent],
+  declarations: [RecordsComponent ,AddRecordsComponent, ViewRecordsComponent],
   imports: [
     CommonModule,
     FormsModule,
-    AnalyticsRoutingModule,
+    RecordsRoutingModule,
     ReactiveFormsModule,
     NbTabsetModule,
     NbRouteTabsetModule,
@@ -50,7 +51,7 @@ import { TableauModule } from 'ngx-tableau';
     NbSpinnerModule,
     NbSelectModule,
     NbIconModule,
-    TableauModule
+    NgxDropzoneModule,
   ]
 })
-export class AnalyticsModule { }
+export class RecordsModule { }

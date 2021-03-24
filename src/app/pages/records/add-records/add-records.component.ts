@@ -4,12 +4,11 @@ import { UploadImageService } from '../../../@core/mock/upload-image.service';
 import { UserDataService } from '../../../@core/mock/user-data.service';
 
 @Component({
-  selector: 'ngx-user-data-form',
-  templateUrl: './user-data-form.component.html',
-  styleUrls: ['./user-data-form.component.scss']
+  selector: 'ngx-add-records',
+  templateUrl: './add-records.component.html',
+  styleUrls: ['./add-records.component.scss']
 })
-export class UserDataFormComponent implements OnInit {
-
+export class AddRecordsComponent implements OnInit {
   firstForm: FormGroup;
   secondForm: FormGroup;
   thirdForm: FormGroup;
@@ -17,14 +16,7 @@ export class UserDataFormComponent implements OnInit {
   loading: Boolean = false;
   showThankYouMessage: Boolean = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private _userDataService: UserDataService,
-    private _uploadImageservice: UploadImageService
-  ) { }
-
   ngOnInit(): void {
-
     this.firstForm = this.fb.group({
       name: ['', Validators.required],
       age: ['', Validators.required],
@@ -46,6 +38,14 @@ export class UserDataFormComponent implements OnInit {
     });
   }
 
+
+
+  constructor(    private fb: FormBuilder,
+    private _userDataService: UserDataService,
+    private _uploadImageservice: UploadImageService) {
+   }
+
+
   onFirstFormSubmit() {
     console.log("First From Updated");
     // console.log(this.firstForm.value);
@@ -55,10 +55,7 @@ export class UserDataFormComponent implements OnInit {
     console.log("Second Frorm Updated");
     this.secondForm.value.caseStartDate = this.secondForm.value.caseDateRange.start;
     this.secondForm.value.caseEndDate = this.secondForm.value.caseDateRange.end;
-
     console.log(this.secondForm.value);
-
-
   };
 
   onThirdFormSubmit(){
@@ -115,5 +112,4 @@ export class UserDataFormComponent implements OnInit {
     })
 
   }
-
 }

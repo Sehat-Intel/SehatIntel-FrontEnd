@@ -19,20 +19,21 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
       icon: 'file-add-outline',
       title: 'Add Records',
-      link: '/pages/analytics/form',
+      link: '/pages/records/add-records',
       home: true
       },
       {
         icon: 'file-text-outline',
         title: 'View Records',
-        link: '/pages/analytics/form',
+        link: '/pages/records/view-records',
         home: true
         }
     ]
   },
   {
     title: 'Analytics',
-    icon: 'activity-outline'
+    icon: 'activity-outline',
+    link: '/pages/analytics/dashboard'
   },
   {
     title: 'Report',
