@@ -20,7 +20,8 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-// import { ImageUploadModule } from 'angular2-image-upload';
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
+import { Cloudinary } from 'cloudinary-core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +42,8 @@ import {
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    CloudinaryModule.forRoot({Cloudinary}, { cloud_name: 'imagecdntuminzee' } as CloudinaryConfiguration),
+
   ],
   bootstrap: [AppComponent],
 })
