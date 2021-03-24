@@ -34,6 +34,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Analytics',
     icon: 'activity-outline'
   },
+  {
+    title: 'Report',
+    icon: 'download-outline'
+  },
+  {
+    title: 'Feedback',
+    icon: 'message-square-outline'
+  },
   // {
   //   title: 'FEATURES',
   //   group: true,
