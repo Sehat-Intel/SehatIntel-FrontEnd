@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AnalyticsComponent } from './analytics.component';
+import { AnalyticsRoutingModule } from "./analytics-routing.module";
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   NbAccordionModule,
@@ -19,13 +21,15 @@ import {
   NbUserModule,
 } from '@nebular/theme';
 import { CommonModule } from '@angular/common';
-import { NgxDropzoneModule } from 'ngx-dropzone';
+import { TableauDashboardComponent } from './tableau-dashboard/tableau-dashboard.component';
+import { TableauModule } from 'ngx-tableau';
 
 @NgModule({
-  declarations: [AnalyticsComponent],
+  declarations: [AnalyticsComponent, TableauDashboardComponent],
   imports: [
     CommonModule,
     FormsModule,
+    AnalyticsRoutingModule,
     ReactiveFormsModule,
     NbTabsetModule,
     NbRouteTabsetModule,
@@ -46,7 +50,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     NbSpinnerModule,
     NbSelectModule,
     NbIconModule,
-    NgxDropzoneModule
+    TableauModule
   ]
 })
 export class AnalyticsModule { }

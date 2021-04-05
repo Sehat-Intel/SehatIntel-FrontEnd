@@ -8,15 +8,40 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //   home: true,
   // },
   {
-    title: 'Home',
+    title: 'Dashboard',
     icon: 'home-outline',
     link: '/pages/home',
   },
   {
+    title: 'My Records',
+    icon: 'archive-outline',
+    children: [
+      {
+      icon: 'file-add-outline',
+      title: 'Add Records',
+      link: '/pages/records/add-records',
+      home: true
+      },
+      {
+        icon: 'file-text-outline',
+        title: 'View Records',
+        link: '/pages/records/view-records',
+        home: true
+        }
+    ]
+  },
+  {
     title: 'Analytics',
     icon: 'activity-outline',
-    link: '/pages/analytics',
-    home: true
+    link: '/pages/analytics/dashboard'
+  },
+  {
+    title: 'Report',
+    icon: 'download-outline'
+  },
+  {
+    title: 'Feedback',
+    icon: 'message-square-outline'
   },
   // {
   //   title: 'FEATURES',
@@ -172,24 +197,24 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //     },
   //   ],
   // },
-  {
-    title: 'Charts',
-    icon: 'pie-chart-outline',
-    children: [
-      {
-        title: 'Echarts',
-        link: '/pages/charts/echarts',
-      },
-      {
-        title: 'Charts.js',
-        link: '/pages/charts/chartjs',
-      },
-      {
-        title: 'D3',
-        link: '/pages/charts/d3',
-      },
-    ],
-  },
+  // {
+  //   title: 'Charts',
+  //   icon: 'pie-chart-outline',
+  //   children: [
+  //     {
+  //       title: 'Echarts',
+  //       link: '/pages/charts/echarts',
+  //     },
+  //     {
+  //       title: 'Charts.js',
+  //       link: '/pages/charts/chartjs',
+  //     },
+  //     {
+  //       title: 'D3',
+  //       link: '/pages/charts/d3',
+  //     },
+  //   ],
+  // },
   // {
   //   title: 'Editors',
   //   icon: 'text-outline',

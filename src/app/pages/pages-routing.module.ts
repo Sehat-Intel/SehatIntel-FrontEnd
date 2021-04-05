@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 // import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 // import { AnalyticsModule } from './analytics/analytics.module';
-import { AnalyticsComponent } from './analytics/analytics.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,7 +21,13 @@ const routes: Routes = [{
     },
     {
       path: 'analytics',
-      component: AnalyticsComponent
+      loadChildren: () => import('./analytics/analytics.module')
+      .then(m => m.AnalyticsModule),
+    },
+    {
+      path: 'records',
+      loadChildren: () => import('./records/records.module')
+      .then(m => m.RecordsModule),
     },
     // {
     //   path: 'layout',

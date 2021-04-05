@@ -20,7 +20,8 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-import { ImageUploadModule } from 'angular2-image-upload';
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
+import { Cloudinary } from 'cloudinary-core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,12 +36,14 @@ import { ImageUploadModule } from 'angular2-image-upload';
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
-    ImageUploadModule.forRoot(),
+    // ImageUploadModule.forRoot(),
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    CloudinaryModule.forRoot({Cloudinary}, { cloud_name: 'imagecdntuminzee' } as CloudinaryConfiguration),
+
   ],
   bootstrap: [AppComponent],
 })
