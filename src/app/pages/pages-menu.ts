@@ -33,7 +33,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Analytics',
     icon: 'activity-outline',
-    link: '/pages/analytics/dashboard'
+    link: '/pages/analytics/'
   },
   {
     title: 'Report',

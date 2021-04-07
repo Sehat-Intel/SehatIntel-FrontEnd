@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((users: any) =>{
         var lastUserCount = (Object.keys(users).length)
         this.user = users[lastUserCount-1];
-        console.log(users);
+        // console.log(users);
       } );
 
     const { xl } = this.breakpointService.getBreakpointsMap();

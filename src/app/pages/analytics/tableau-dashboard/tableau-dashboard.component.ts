@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableauDashboardComponent implements OnInit {
   url = "https://public.tableau.com/views/Sehat-IntelVisualization/MainParametersDistribution?:language=en&:display_count=y&:toolbar=n&:origin=viz_share_link"
+  serverUrl="https://public.tableau.com"
+  report="Sehat-IntelVisualization/MainParametersDistribution"
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,15 @@
+<!-- <div class="tableau-dashboard">
+  <ngx-tableau
+  [tableauVizUrl]="url"
+  ></ngx-tableau>
+</div> -->
+
+
 <div class="tableau-dashboard">
-  <ngx-tableau [tableauVizUrl]="url"></ngx-tableau>
+  <ngx-tableau
+  [tableauVizUrl]="url"
+  [serverUrl]="serverUrl"
+  [report]="report"
+  ></ngx-tableau>
 </div>
 

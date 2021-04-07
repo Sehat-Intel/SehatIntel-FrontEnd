@@ -51,6 +51,7 @@ import { RecordsComponent } from './records.component';
     NbSpinnerModule,
     NbSelectModule,
     NbIconModule,
+    NbAccordionModule,
     NgxDropzoneModule,
   ]
 })
