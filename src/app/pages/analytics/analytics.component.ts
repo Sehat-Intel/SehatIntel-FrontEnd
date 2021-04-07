@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'ngx-analytics',
   template: `
   <router-outlet></router-outlet>
-`,
-  styleUrls: ['./analytics.component.scss']
+  `,
 })
 export class AnalyticsComponent implements OnInit {
 
