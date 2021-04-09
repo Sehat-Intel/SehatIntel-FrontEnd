@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as pdfMake from "pdfmake/build/pdfmake";
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import { UserDataService } from '../../../@core/mock/user-data.service';
 
 (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs;
 
@@ -8,14 +9,20 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 @Component({
   selector: 'ngx-view-records',
   templateUrl: './view-records.component.html',
-  styleUrls: ['./view-records.component.scss']
+  styleUrls: ['./view-records.component.scss'],
 })
 export class ViewRecordsComponent implements OnInit {
+  records: any;
 
-  constructor() { }
+  constructor(private userDataService: UserDataService) { }
 
   ngOnInit(): void {
+    this.userDataService.getAllUserData().subscribe((records) => {
+      this.records = records;
+      console.log(this.records);
+    })
   }
+
 
 
   onDownload(): void

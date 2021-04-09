@@ -17,4 +17,5 @@ export interface UserData {
 
 export abstract class UserDataService {
   abstract sendUserData(data: UserData): Observable<any>;
+  abstract getAllUserData();
 }

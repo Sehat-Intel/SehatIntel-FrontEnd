@@ -1,4 +1,4 @@
-<nb-accordion>
+<!-- <nb-accordion>
   <nb-accordion-item>
    <nb-accordion-item-header>Tumin Sheth Report#1 02/23/2021</nb-accordion-item-header>
    <nb-accordion-item-body>
@@ -197,4 +197,104 @@
     </nb-accordion-item-body>
    </nb-accordion-item>
 
- </nb-accordion>
+</nb-accordion>
+ -->
+
+<nb-accordion *ngFor="let record of records">
+  <nb-accordion-item>
+    <nb-accordion-item-header>Report of {{record.name}}, {{record.caseStartDate | date}}
+
+    </nb-accordion-item-header>
+    <nb-accordion-item-body>
+     <div class="row">
+       <div class="col">
+         <nb-card>
+           <nb-card-header>Report date: 02/02/2021</nb-card-header>
+           <nb-card-body>
+             <form>
+               <div class="form-group row">
+                 <label for="name" class="label col-sm-3 col-form-label">Name</label>
+                 <div class="col-sm-9">
+                   <label type="text" placeholder="Name">
+                     {{record.name}}
+                     </label>
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <label for="age" class="label col-sm-3 col-form-label">Age</label>
+                 <div class="col-sm-9">
+                   <label type="number" placeholder="Age">
+                     {{record.age}}
+                     </label>
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <label for="email" class="label col-sm-3 col-form-label">Email</label>
+                 <div class="col-sm-9">
+                   <label type="email" placeholder="Email">
+                     {{record.email}}
+                     </label>
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <label for="phone" class="label col-sm-3 col-form-label">Phone</label>
+                 <div class="col-sm-9">
+                   <label type="text" placeholder="Phone">
+                     +91-7575064212
+                     </label>
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <label for="hospitalName" class="label col-sm-3 col-form-label">Hospital Name</label>
+                 <div class="col-sm-9">
+                   <label type="text" placeholder="Hospital Name">
+                     {{record.hospitalsName}}
+                     </label>
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <label for="prescription" class="label col-sm-3 col-form-label">Doctor's Prescription</label>
+                 <div class="col-sm-9">
+                   <label type="text" placeholder="Prescription">
+                     {{record.prescription}}
+                     </label>
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <label for="date" class="label col-sm-3 col-form-label">Case Date</label>
+                 <div class="col-sm-9">
+                   <label type="date" placeholder="Date">
+                     {{record.caseStartDate | date}} - {{record.caseEndDate | date}}
+                     </label>
+                 </div>
+               </div>
+
+               <div class="form-group row">
+                 <label for="reportType" class="label col-sm-3 col-form-label">Report Type</label>
+                 <div class="col-sm-9">
+                   <label type="text" placeholder="Report Type">
+                     X-ray
+                     </label>
+                 </div>
+               </div>
+
+
+               <div class="form-group row">
+                 <label for="diseasesName" class="label col-sm-3 col-form-label">Diseases detetced by the model</label>
+                 <div class="col-sm-9">
+                   <label type="text" placeholder="Diseases Name">
+                     {{record.labReportDiagnosistics}}
+                     </label>
+                 </div>
+               </div>
+
+             </form>
+           </nb-card-body>
+         </nb-card>
+       </div>
+     </div>
+
+      <button nbButton (click)="onDownload()">Download</button>
+    </nb-accordion-item-body>
+   </nb-accordion-item>
+</nb-accordion>

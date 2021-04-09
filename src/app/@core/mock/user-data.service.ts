@@ -7,7 +7,11 @@ import { environment } from '../../../environments/environment';
 import { UserData } from '../data/user-data';
 
 
-@Injectable()
+
+@Injectable({
+  providedIn: 'any',
+})
+
 export class UserDataService {
   url = environment.api_url;
 
@@ -15,5 +19,9 @@ export class UserDataService {
 
   sendUserData(data: UserData){
     return this.http.post(this.url + '/data', data);
+  }
+
+  getAllUserData(){
+    return this.http.get(this.url + '/data')
   }
 }
