@@ -109,7 +109,7 @@ export class AddRecordsComponent implements OnInit {
     // console.log(obj);
     this._userDataService.sendUserData(obj).subscribe((response) => {
       console.log("response", response)
-      this._userDataService.generateReportRequestToFlask({'id': response.id}).subscribe((flaskFeedBack) => {
+      this._userDataService.generateReportRequestToFlask(response).subscribe((flaskFeedBack) => {
         console.log(flaskFeedBack)
       }, (error) => {
         console.log(error);
