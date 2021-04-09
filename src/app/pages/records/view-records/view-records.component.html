@@ -240,7 +240,7 @@
                  <label for="phone" class="label col-sm-3 col-form-label">Phone</label>
                  <div class="col-sm-9">
                    <label type="text" placeholder="Phone">
-                     +91-7575064212
+                     {{record.phone}}
                      </label>
                  </div>
                </div>
@@ -287,6 +287,14 @@
                      </label>
                  </div>
                </div>
+
+
+               <div class="form-group row">
+                <label for="diseasesName" class="label col-sm-3 col-form-label">Lab Report Image</label>
+                <div class="col-sm-9">
+                  <img [src]='record.labReportFileUrl'>
+                </div>
+              </div>
 
              </form>
            </nb-card-body>

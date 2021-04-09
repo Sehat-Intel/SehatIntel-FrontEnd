@@ -19,7 +19,7 @@ export class ViewRecordsComponent implements OnInit {
   ngOnInit(): void {
     this.userDataService.getAllUserData().subscribe((records) => {
       this.records = records;
-      console.log(this.records);
+      // console.log(this.records);
     })
   }
 

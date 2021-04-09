@@ -4,7 +4,6 @@
        <nb-step [label]="labelOne">
         <ng-template #labelOne>First step</ng-template>
         <h4>Enter all the details to proceed to the next step</h4>
-        <img clSrc="https://cloudinary.com/images/logo.png" type="fetch" fetch-format="auto" quality="auto">
         <nb-card>
           <nb-card-header>Personal Details</nb-card-header>
           <nb-card-body>
@@ -25,12 +24,23 @@
               </div>
 
               <div class="form-group row">
-                <label for="inputEmail1" class="label col-sm-3 col-form-label">Email</label>
+                <label for="inputEmail" class="label col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-9">
                   <input type="email" nbInput fullWidth formControlName="email" placeholder="Email"
                     [status]="(firstForm.get('email').invalid&& (firstForm.get('email').dirty || firstForm.get('email').touched) )? 'danger' : 'basic' ">
                 </div>
               </div>
+
+              <div class="form-group row">
+                <label for="inputPhone" class="label col-sm-3 col-form-label">Phone</label>
+                <div class="col-sm-9">
+                  <input type="text" nbInput fullWidth formControlName="phone" placeholder="Phone"
+                    [status]="(firstForm.get('phone').invalid&& (firstForm.get('phone').dirty || firstForm.get('phone').touched) )? 'danger' : 'basic' ">
+                </div>
+              </div>
+
+
+
               <button type="button" nbButton nbStepperNext (click)="onFirstFormSubmit()"
                 [disabled]="firstForm.invalid">next</button>
             </form>
@@ -113,6 +123,14 @@
                 <label for="inputPrescription" class="label col-sm-3 col-form-label">Prescription</label>
                 <div class="col-sm-9">
                   <textarea type="text" nbInput fullWidth formControlName="prescription" placeholder="Prescription"></textarea>
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <label for="inuputLabReportType" class="label col-sm-3 col-form-label">Lab Report Type</label>
+                <div class="col-sm-9">
+                  <textarea type="text" nbInput fullWidth formControlName="labReportType" placeholder="Lab Report Type"></textarea>
                 </div>
               </div>
 

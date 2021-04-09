@@ -14,6 +14,7 @@ import { UserData } from '../data/user-data';
 
 export class UserDataService {
   url = environment.api_url;
+  flask_url = environment.flask_url;
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +23,11 @@ export class UserDataService {
   }
 
   getAllUserData(){
-    return this.http.get(this.url + '/data')
+    return this.http.get(this.url + '/data');
   }
+
+  generateReportRequestToFlask(id){
+    return this.http.post(this.flask_url + '/image', id);
+  }
+
 }

@@ -21,6 +21,7 @@ export class AddRecordsComponent implements OnInit {
       name: ['', Validators.required],
       age: ['', Validators.required],
       email: ['', Validators.required],
+      phone: ['', Validators.required]
     });
     this.secondForm = this.fb.group({
       diseasesName: ['', Validators.required],
@@ -34,6 +35,7 @@ export class AddRecordsComponent implements OnInit {
       doctorsFeedback : ['', Validators.required],
       prescription: ['', Validators.required],
       labReportFileId: ['',],
+      labReportType: ['', ],
       labReportFileUrl: ['',]
     });
   }
@@ -84,7 +86,7 @@ export class AddRecordsComponent implements OnInit {
       data.append('cloud_name', 'imagecdntuminzee');
 
       this._uploadImageservice.uploadImage(data).subscribe((response) => {
-          console.log(`url : ${response.secure_url}\npublic_id:${response.public_id}`);
+          // console.log(`url : ${response.secure_url}\npublic_id:${response.public_id}`);
           this.thirdForm.value.labReportFileUrl = response.secure_url
           this.thirdForm.value.labReportFileId = response.public_id
           resolve();
@@ -104,9 +106,14 @@ export class AddRecordsComponent implements OnInit {
       ...this.secondForm.value,
       ...this.thirdForm.value
     };
-    console.log(obj);
+    // console.log(obj);
     this._userDataService.sendUserData(obj).subscribe((response) => {
-      console.log(response);
+      console.log("response", response)
+      this._userDataService.generateReportRequestToFlask({'id': response.id}).subscribe((flaskFeedBack) => {
+        console.log(flaskFeedBack)
+      }, (error) => {
+        console.log(error);
+      })
       this.loading = false;
       this.showThankYouMessage = true;
     })
