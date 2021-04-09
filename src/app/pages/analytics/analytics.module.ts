@@ -23,9 +23,10 @@ import {
 import { CommonModule } from '@angular/common';
 import { TableauDashboardComponent } from './tableau-dashboard/tableau-dashboard.component';
 import { TableauModule } from 'ngx-tableau';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
-  declarations: [AnalyticsComponent, TableauDashboardComponent],
+  declarations: [AnalyticsComponent, TableauDashboardComponent, MapComponent],
   imports: [
     CommonModule,
     FormsModule,
