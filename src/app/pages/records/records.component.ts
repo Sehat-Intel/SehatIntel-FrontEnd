@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <router-outlet></router-outlet>
   `,
-  styleUrls: ['./records.component.scss']
 })
 export class RecordsComponent implements OnInit {
 

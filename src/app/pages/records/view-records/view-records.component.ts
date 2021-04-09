@@ -23,51 +23,64 @@ export class ViewRecordsComponent implements OnInit {
     })
   }
 
+  formatDate(date) {
+    var day = date.getDate();
+    if (day < 10) {
+        day = "0" + day;
+    }
+    var month = date.getMonth() + 1;
+    if (month < 10) {
+        month = "0" + month;
+    }
+    var year = date.getFullYear();
+    return day + "/" + month + "/" + year;
+}
 
-
-  onDownload(): void
+  onDownload(record): void
   {
-    var url = 'http://localhost:4200/pages/records/view-records';
+    var caseStartDate = this.formatDate(new Date(record.caseStartDate));
+    var caseEndDate = this.formatDate(new Date(record.caseEndDate));
+
+    var reportQRUrl = `http://localhost:4200/pages/records/view-records/${record._id}`;
     var docDefinition = {
       info: {
-        title: 'Report of Tumin Sheth',
+        title: `Report of ${record.name}`,
         pageMargins: [ 40, 60, 40, 60 ],
         pageSize: 'A4',
-
         author: 'Sehat Intel'
         },
         content: [
           {text: 'Sehat Intel', style: 'header'},
-          { text: 'Report of Tumin Sheth', style: 'subheader' },
+          { text: `Report of ${record.name}`, style: 'subheader' },
           '\n',
           { table: {
             widths: [150, 250],
             body: [
-              ['Name', 'Tumin Sheth'],
-              ['Age', '21'],
-              ['Email', {text: 't.sheth33@gmail.com', link: 'http://google.com'}],
-              ['Phone', {text: '+91-7575064212', link: 'tel:(503) 468-4890'}],
-              ['Doctor\'s Prescription', 'You will be fine don\'t worry my dear'],
-              ['Case Date', '12-02-2021'],
-              ['Hospital Name', 'Sheth Hospital'],
-              ['Diseases', 'Diarrhea'],
+              ['Name', `${record.name}`],
+              ['Age', `${record.age}`],
+              ['Email', {text: `${record.email}`, link: `mailTo:${record.email}`}],
+              ['Phone', {text: `${record.phone}`, link: `tel:${record.phone}`}],
+              ['Doctor\'s Prescription', `${record.prescription}`],
+              ['Case Date', `${caseStartDate} - ${caseEndDate}` ],
+              ['Hospital Name', `${record.hospitalsName}`],
+              ['Diseases', `${record.labReportDiagnosistics}`],
             ]
               }
           },
           '\n',
           {
             // in browser is supported loading images via url from reference by name in images
-            image: 'snow',
+            image: 'recordImage',
             fit: [200, 200]
           },
           '\n',
           {text: 'Open your report here'},
-          { qr: url },
+          { qr: reportQRUrl },
           '\n',
         ],
         images: {
           // in browser is supported loading images via url (https or http protocol) (minimal version: 0.1.67)
-          snow: 'https://cdn.shopify.com/s/files/1/0117/4483/7728/products/bh-black_1_1200x.png?v=1611676227'
+          recordImage: `${record.labReportFileUrl}`
         },
         styles: {
           header: {
@@ -81,7 +94,7 @@ export class ViewRecordsComponent implements OnInit {
       }
     ;
 
-    pdfMake.createPdf(docDefinition).download("Report Of Tumin Sheth");
+    pdfMake.createPdf(docDefinition).download(`Report of ${record.name}`);
     }
 
 }
