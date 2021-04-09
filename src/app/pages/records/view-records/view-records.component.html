@@ -5,11 +5,27 @@
     <div class="row">
       <div class="col">
         <nb-card>
-          <nb-card-header>Amnesia 78%</nb-card-header>
+          <nb-card-header>Report date: 02/02/2021</nb-card-header>
           <nb-card-body>
             <form>
               <div class="form-group row">
-                <label for="inputEmail1" class="label col-sm-3 col-form-label">Email</label>
+                <label for="name" class="label col-sm-3 col-form-label">Name</label>
+                <div class="col-sm-9">
+                  <label type="text" placeholder="Name">
+                    Tumin Sheth
+                    </label>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="age" class="label col-sm-3 col-form-label">Age</label>
+                <div class="col-sm-9">
+                  <label type="number" placeholder="Age">
+                    21
+                    </label>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="email" class="label col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-9">
                   <label type="email" placeholder="Email">
                     t.sheth33@gmail.com
@@ -17,36 +33,65 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="inputEmail1" class="label col-sm-3 col-form-label">Name</label>
+                <label for="phone" class="label col-sm-3 col-form-label">Phone</label>
                 <div class="col-sm-9">
-                  <label type="email" placeholder="Email">
-                    Tumin Sheth
-                    </label>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="inputEmail1" class="label col-sm-3 col-form-label">Phone Number</label>
-                <div class="col-sm-9">
-                  <label type="email" placeholder="Email">
+                  <label type="text" placeholder="Phone">
                     +91-7575064212
                     </label>
                 </div>
               </div>
               <div class="form-group row">
-                <label for="inputEmail1" class="label col-sm-3 col-form-label">Diseases Detected</label>
+                <label for="hospitalName" class="label col-sm-3 col-form-label">Hospital Name</label>
                 <div class="col-sm-9">
-                  <label type="email" placeholder="Email">
+                  <label type="text" placeholder="Hospital Name">
+                    Sheth Hospital
+                    </label>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="prescription" class="label col-sm-3 col-form-label">Doctor's Prescription</label>
+                <div class="col-sm-9">
+                  <label type="text" placeholder="Phone">
+                    1. Drink plenty of water<br>
+                    2. Eat Healthy
+                    </label>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="date" class="label col-sm-3 col-form-label">Case Date</label>
+                <div class="col-sm-9">
+                  <label type="date" placeholder="Date">
+                    21/03/2021
+                    </label>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="reportType" class="label col-sm-3 col-form-label">Report Type</label>
+                <div class="col-sm-9">
+                  <label type="text" placeholder="Report Type">
+                    X-ray
+                    </label>
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <label for="diseasesName" class="label col-sm-3 col-form-label">Diseases detetced by the model</label>
+                <div class="col-sm-9">
+                  <label type="text" placeholder="Diseases Name">
                     Amnesia
                     </label>
                 </div>
               </div>
+
             </form>
           </nb-card-body>
         </nb-card>
       </div>
     </div>
 
-     <button nbButton>Download</button>
+     <button nbButton (click)="onDownload()">Download</button>
    </nb-accordion-item-body>
   </nb-accordion-item>
 
