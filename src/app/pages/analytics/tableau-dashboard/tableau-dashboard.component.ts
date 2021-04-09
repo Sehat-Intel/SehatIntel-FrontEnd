@@ -20,6 +20,7 @@ export class TableauDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // location.reload();
   }
 
 }

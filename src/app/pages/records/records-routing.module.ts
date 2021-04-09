@@ -9,6 +9,7 @@ const routes: Routes = [
     path: '',
     component: RecordsComponent,
     children: [
+      {path: '', redirectTo: 'add-records'},
       {
         path: 'add-records',
         component: AddRecordsComponent,
