@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   template: `
             <div class="tableau-dashboard">
                 <ngx-tableau
-                [tableauVizUrl]="url"
                 [serverUrl]="serverUrl"
                 [report]="report"
                 ></ngx-tableau>
@@ -14,13 +13,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tableau-dashboard.component.scss']
 })
 export class TableauDashboardComponent implements OnInit {
-  url: "https://public.tableau.com/views/Sehat-IntelVisualization/MainParametersDistribution";
+  // url= "https://public.tableau.com/views/Sehat-IntelVisualization/MainParametersDistribution";
   serverUrl="https://public.tableau.com"
   report="Sehat-IntelVisualization/MainParametersDistribution"
   constructor() { }
 
   ngOnInit(): void {
-    // location.reload();
   }
 
 }

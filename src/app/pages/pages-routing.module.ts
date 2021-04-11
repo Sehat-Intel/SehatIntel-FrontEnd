@@ -81,7 +81,7 @@ const routes: Routes = [{
     // },
     {
       path: '',
-      redirectTo: 'analytics',
+      redirectTo: 'records',
       pathMatch: 'full',
     },
     {
